@@ -20,9 +20,13 @@ void mas::find_and_change() {
     cout << "¬ведите координаты элемента(строка, столбец): ";
     cin >> x >> y;
     cout << arr[x-1][y-1] << endl;
+    cout << "’отите заменить этот элемент?(y/n): ";
+    cin >> k;
+    if (k == "y") {
         cout << "¬ведите новое значение: ";
         cin >> q;
-        arr[x-1][y-1] = q;
+        arr[x - 1][y - 1] = q;
+    }
 }
 
 void mas::find_min(int x,int y) {
