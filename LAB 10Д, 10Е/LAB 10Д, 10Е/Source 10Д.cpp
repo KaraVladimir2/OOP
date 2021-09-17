@@ -1,6 +1,6 @@
 ﻿#include "Header 10Д.h"
 
-void train::set_arr(train arr[5]) {
+void train::input_arr(train arr[5]) {
 	for (int i = 0; i < 5; i++)
 	{
 		cout << "Введите название, номер, и время: ";
