@@ -84,7 +84,7 @@ int main()
 	int i;
 	cout << "Выберите: 1) Ввод вручную; 2) Автоматический ввод: ";
 	cin >> i;
-	if (i == 1) ob.set_arr(arr);
+	if (i == 1) ob.input_arr(arr);
 	else if (i == 2) ob.set_arr_hard(arr);
 	ob.sort_by_number(arr);
 	ob.show(arr);
