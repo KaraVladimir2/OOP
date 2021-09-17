@@ -8,13 +8,18 @@ void train::set_arr(train arr[5]) {
 	}
 }
 
+void train::set_arr_hard(train arr[5]) {
+	arr[0].destination = "Киев"; arr[0].number = 34; arr[0].time = "12:00";
+	arr[1].destination = "Харьков"; arr[1].number = 21; arr[1].time = "23:00";
+	arr[2].destination = "Херсон"; arr[2].number = 12; arr[2].time = "20:00";
+	arr[3].destination = "Днепр"; arr[3].number = 2; arr[3].time = "15:00";
+	arr[4].destination = "Харьков"; arr[4].number = 65; arr[4].time = "17:00";
+}
+
 void train::show(train arr[5]) {
 	printf("|    Название   |Номер|Время|\n");
 	for (int i = 0; i < 5; i++)
 	{
-		/*cout << arr[i].destination<< setw(5);
-		cout << arr[i].number<< setw(5);
-		cout << arr[i].time<<endl;*/
 		printf("|%15s|%5d|%5s|\n", arr[i].destination.c_str(), arr[i].number, arr[i].time.c_str());
 	}
 }
@@ -77,7 +82,10 @@ int main()
 	train ob;
 	train arr[5]{};
 	int i;
-	ob.set_arr(arr);
+	cout << "Выберите: 1) Ввод вручную; 2) Автоматический ввод: ";
+	cin >> i;
+	if (i == 1) ob.set_arr(arr);
+	else if (i == 2) ob.set_arr_hard(arr);
 	ob.sort_by_number(arr);
 	ob.show(arr);
 	while (true) {
