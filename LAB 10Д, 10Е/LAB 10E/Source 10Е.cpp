@@ -74,7 +74,7 @@ void mas::show()
 int main(){
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    int k(10), x, y;
+    int k(0), x, y;
     cout << "¬ведите размер массива(строка, столбец): ";
         cin >> x >> y;
     mas ob(x,y);
@@ -84,16 +84,13 @@ int main(){
         cout << "¬ведите соответствующую цифру(1-генераци€ случайного массива, 2-показать массив,\n3-найти координаты минимального элемента, 4-найти и заменить, 5-выделить подматрицу): ";
         cin >> k;
         if (k == 1) {
-            k = 10;
             ob.gen();
         }
         else if (k == 2) {
             ob.show();
-            k = 10;
         }
         else if (k == 3) {
             ob.find_min(x,y);
-            k = 10;
         }
         else if (k == 4) {
             ob.find_and_change();
