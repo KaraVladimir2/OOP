@@ -16,8 +16,5 @@ public:
 	int get_y();
 	int sum(Point& q);
 	int multiply(Point& q);
-	void show(Point& def, Point& param, Point& copy);
-	void show_def(Point& def);
-	void show_param(Point& param);
-	void show_copy(Point& copy);
+	void show(Point& def);
 };
