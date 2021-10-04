@@ -41,7 +41,6 @@ ostream& operator << (ostream& out, const PEVM& ob) {
 	printf("| %21s| %9d| %4d| %4s|\n", ob.proc.c_str(), ob.mgz, ob.ram, ob.type.c_str());
 	return out;
 }
-
 istream& operator >> (istream& in, PEVM& ob) {
 	cout << "Процессор = ";    in >> ob.proc;
 	cout << "Частота (Mgz) = ";    in >> ob.mgz;
@@ -50,6 +49,14 @@ istream& operator >> (istream& in, PEVM& ob) {
 	cout << endl;
 	return in;
 }
+int PEVM::operator[](int i) {
+	printf("| %21s| %9d| %4d| %4s|\n", proc.c_str(), mgz, ram, type.c_str());
+	return i;
+}
+PEVM PEVM::operator () (string p, int m, int r, string t) {
+	proc = p; mgz = m; ram = r; type = t;
+	return *this;
+}
 
 
 int main()
@@ -57,8 +64,8 @@ int main()
 	setlocale(LC_ALL, "ru");
 	int q, k, l;
 	PEVM ob[3];
-	string* line = new string [4];
-	ifstream in("D:\\Программы\\CPP_Projects\\2 kurs\\OOP\\LAB 2\\text.txt");
+	string line[4];
+	ifstream in("text.txt");
 	if (in.is_open())
 	{	
 		for (int i = 0; i < 3; i++)
@@ -78,7 +85,9 @@ int main()
 		cout << "Выберите:" << endl << "1) Присвоить одному объекту информацию другого;" << endl
 			<< "2) Сложить информацию двух объектов;" << endl
 			<< "3) Проверить объекты на соответствие частоты;" << endl
-			<< "4) Вывести таблицу." << endl;
+			<< "4) Вывести таблицу с помощью потокового вывода;" << endl
+			<< "5) Вывести таблицу с помощью оператора индексации;" << endl
+			<< "6) Изменить какой-то объект." << endl;
 		cin >> k;
 		if (k == 1) {
 			cout << "Укажите объект, которому нужно что-то присвоить: "; cin >> k;
@@ -103,6 +112,22 @@ int main()
 			{
 				cout << ob[i];
 			}
+		}
+		else if (k == 5) {
+			ob[0].shapka();
+			for (int i = 0; i < 3; i++)
+			{
+				ob[i][i];
+			}
+		}
+		else if (k == 6) {
+			int m, r;
+			string p, t;
+			cout << "Какой объект хотите изменить: ";
+			cin >> k;
+			cout << "Введите новые данные(proc, mgz, ram, type): ";
+			cin >> p >> m >> r >> t;
+			ob[k](p, m, r, t);
 		}
 	}
 }
