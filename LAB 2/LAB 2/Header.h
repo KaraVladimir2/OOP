@@ -24,7 +24,7 @@ public:
 	void shapka();
 
 	PEVM operator = (const PEVM& ob);
-	int operator [] (int i);
+	void operator [] (int i);
 	PEVM operator () (string p, int m, int r, string t);
 
 	friend PEVM operator + (const PEVM& ob1, const PEVM& ob2);

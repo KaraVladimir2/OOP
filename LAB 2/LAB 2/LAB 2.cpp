@@ -49,9 +49,11 @@ istream& operator >> (istream& in, PEVM& ob) {
 	cout << endl;
 	return in;
 }
-int PEVM::operator[](int i) {
-	printf("| %21s| %9d| %4d| %4s|\n", proc.c_str(), mgz, ram, type.c_str());
-	return i;
+void PEVM::operator[](int i) {
+	if (i < 0 || i > 2) {
+		cout << "Не допустимый" << endl;
+	}
+	else cout << "Допустимый" << endl;
 }
 PEVM PEVM::operator () (string p, int m, int r, string t) {
 	proc = p; mgz = m; ram = r; type = t;
@@ -86,7 +88,7 @@ int main()
 			<< "2) Сложить информацию двух объектов;" << endl
 			<< "3) Проверить объекты на соответствие частоты;" << endl
 			<< "4) Вывести таблицу с помощью потокового вывода;" << endl
-			<< "5) Вывести таблицу с помощью оператора индексации;" << endl
+			<< "5) Проверить допустимый диапозон в массиве;" << endl
 			<< "6) Изменить какой-то объект." << endl;
 		cin >> k;
 		if (k == 1) {
@@ -114,11 +116,9 @@ int main()
 			}
 		}
 		else if (k == 5) {
-			ob[0].shapka();
-			for (int i = 0; i < 3; i++)
-			{
-				ob[i][i];
-			}
+			cout << "Введите номер рядка массива: ";
+			cin >> k;
+				ob[k][k];
 		}
 		else if (k == 6) {
 			int m, r;
