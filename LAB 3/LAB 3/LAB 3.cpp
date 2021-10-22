@@ -4,7 +4,6 @@
 int main()
 {
     setlocale(LC_ALL, "ru");
-    D4 temp(1, 2, 3, 4, 5, 6);
-    cout << "D4 temp(1,2,3,4,5,6);\n";
-    temp.show_D4();
+    D4* ob = new D4(100, 200, 300, 400, 500, 600);
+    cout << *ob;
 }
