@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-
 using namespace std;
 
 class B1 {
@@ -13,8 +12,8 @@ public:
 		out << "  b1 = " << ob.b1 << endl;
 		return out;
 	}
-
 };
+
 class B2 {
 	int b2;
 public:
@@ -26,7 +25,8 @@ public:
 		return out;
 	}
 };
-class D1 : public B1, public B2 {
+
+class D1 : virtual public B1, virtual public B2 {
 	int d1;
 public:
 	D1(int x1, int x2, int x3) : B1(x1), B2(x2) { d1 = x3; };
@@ -41,6 +41,7 @@ public:
 		return out;
 	}
 };
+
 class D2 {
 	int d2;
 public:
@@ -52,10 +53,11 @@ public:
 		return out;
 	}
 };
-class D3 : public D1, public D2 {
+
+class D3 : virtual public D1, virtual public D2 {
 	int d3;
 public:
-	 D3(int x1, int x2, int x3, int x4, int x5) : D1(x1,x2,x3), D2(x4) { d3 = x5; };
+	 D3(int x1, int x2, int x3, int x4, int x5) : B1(x1), B2(x2), D1(x1,x2,x3), D2(x4) { d3 = x5; };
 	 int get_d3() { return d3; }
 	 /*virtual void show() {
 		 cout << "B1= " << get_b1() << endl << "B2= " << get_b2() << endl
@@ -67,10 +69,12 @@ public:
 		 return out;
 	 }
 };
-class D4 :public D3 {
+
+class D4 :virtual public D3 {
 	int d4;
 public:
-	 D4(int x1, int x2, int x3, int x4, int x5, int x6) : D3(x1,x2,x3,x4,x5) { d4 = x6; };
+	 D4(int x1, int x2, int x3, int x4, int x5, int x6) : B1(x1),B2(x2), D1(x1,x2,x3), 
+		 D2(x4), D3(x1,x2,x3,x4,x5) { d4 = x6; };
 	 /*virtual void show() {
 		 cout << "B1= " << get_b1() << endl << "B2= " << get_b2() << endl
 			 << "D1= " << get_d1() << endl << "D2= " << get_d2() << endl
