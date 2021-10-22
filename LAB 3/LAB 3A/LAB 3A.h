@@ -22,7 +22,6 @@ public:
 };
 class Spaniel : public Sobaka {
 	string color;
-
 public:
 	Spaniel(string c) { color = c; cout << "Конструктор Spaniel"<<endl; };
 	void show_Spaniel() { cout << "color= " << color << endl; }

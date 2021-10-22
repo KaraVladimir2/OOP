@@ -35,7 +35,7 @@ int main()
 				else b = false;
 			}
 			if (ob[k].get_mark()) cout << "Такая книга есть в библиотеке!" << endl << endl;
-			else cout << "Такой книги в библиотеке нет!" << endl << endl;
+			else cout << "Такой книги нет в библиотеке нет!" << endl << endl;
 		}
 		if (k == 3) {
 			ob[0].set_mark(false);
@@ -46,7 +46,7 @@ int main()
 				else b = false;
 			}
 			if (ob[k].get_mark()) cout << "Такая книга есть в библиотеке!" << endl << endl;
-			else cout << "Такой книги в библиотеке нет!" << endl << endl;
+			else cout << "Такой книги нет в библиотеке нет!" << endl << endl;
 		}
 	}
 }

@@ -33,7 +33,7 @@ public:
 class Circle : public Figure {
     int radius;
 public:
-    Circle(int r) : radius(r) {}
+    Circle(int r = 10) : radius(r) {}
     double Square() override {return radius * radius * 3.14;}
     void show() {cout << "Circle" << endl; }
 };

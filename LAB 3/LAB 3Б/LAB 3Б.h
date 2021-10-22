@@ -31,8 +31,4 @@ public:
 		if (get_name() == s) return true;
 		else return false;
 	}
-	bool ExistenceInLibrary(string s) {
-		if (get_name() == s) return true;
-		else return false;
-	}
 };
