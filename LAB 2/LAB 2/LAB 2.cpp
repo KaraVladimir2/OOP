@@ -50,16 +50,12 @@ istream& operator >> (istream& in, PEVM& ob) {
 	return in;
 }
 void PEVM::operator[](int i) {
-	if (i < 0 || i > 2) {
-		cout << "Не допустимый" << endl;
-	}
-	else cout << "Допустимый" << endl;
+	cout << proc.length() << endl;
 }
 PEVM PEVM::operator () (string p, int m, int r, string t) {
 	proc = p; mgz = m; ram = r; type = t;
 	return *this;
 }
-
 
 int main()
 {
@@ -88,7 +84,7 @@ int main()
 			<< "2) Сложить информацию двух объектов;" << endl
 			<< "3) Проверить объекты на соответствие частоты;" << endl
 			<< "4) Вывести таблицу с помощью потокового вывода;" << endl
-			<< "5) Проверить допустимый диапозон в массиве;" << endl
+			<< "5) Посчитать длину переменной типа string;" << endl
 			<< "6) Изменить какой-то объект." << endl;
 		cin >> k;
 		if (k == 1) {
