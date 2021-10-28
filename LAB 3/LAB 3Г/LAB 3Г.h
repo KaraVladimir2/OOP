@@ -4,36 +4,37 @@ using namespace std;
 
 class Figure {
 public:
-    virtual double Square() = 0;
-    virtual void show() = 0;
+    virtual void show(int a =NULL, int b = NULL, int c = NULL) = 0;
 };
 
 class Triangle : public Figure {
-    int a;
-    int b;
-    int c;
+    int a1 = 0;
+    int b1 = 0;
+    int c1 = 0;
 public:
-    Triangle(int x, int y, int z) : a(x), b(y), c(z) {}
-    double Square() override {
-        int p = (a + b + c) / 2;
-        return (sqrt(p * (p - a) * (p - b) * (p - c)));
-    }
-    void show() { cout << "Rectangle" << endl; }
+    Triangle(){}
+    virtual void show(int a = NULL, int b = NULL, int c = NULL) override {
+        a1 = a; b1 = b; c1 = c;
+        cout << "Triangle = " << 
+            sqrt(((a + b + c) / 2) * (((a + b + c) / 2) - a) * (((a + b + c) / 2) - b) * (((a + b + c) / 2) - c)) 
+            << endl; }
 };
 
 class Rectangle : public Figure {
-    int a;
-    int b;
+    int a1;
+    int b1;
 public:
-    Rectangle(int w, int h) : a(w), b(h){}
-    double Square() override {return a * b;}
-    void show() {cout << "Rectangle" << endl;}
+    Rectangle(){}
+    virtual void show(int a = NULL, int b = NULL, int c = NULL) override {
+        a1 = a; b1 = b;
+        cout << "Rectangle = " << a * b << endl;}
 };
 
 class Circle : public Figure {
     int radius;
 public:
-    Circle(int r = 10) : radius(r) {}
-    double Square() override {return radius * radius * 3.14;}
-    void show() {cout << "Circle" << endl; }
+    Circle(){}
+    virtual void show(int a = NULL, int b = NULL, int c = NULL) override {
+        radius = a;
+        cout << "Circle = " << radius * radius * 3.14 << endl; }
 };

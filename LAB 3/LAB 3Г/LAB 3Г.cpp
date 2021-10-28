@@ -3,14 +3,15 @@
 int main()
 {
     setlocale(LC_ALL, "ru");
+    int a, b, c;
     Figure* p;
-    Triangle triang(10, 10, 10);
-    Rectangle rect(10, 20);
-    Circle circle(10);
+    Triangle triang;
+    Rectangle rect;
+    Circle circle;
     p = &triang;
-    cout << "Площадь треуголника: " << p->Square() << endl;
+    p->show(10,10,10);
     p = &rect;
-    cout << "Площадь прямоуголника: " << p->Square() << endl;
+    p->show(10,10);
     p = &circle;
-    cout << "Площадь круга: " << p->Square() << endl;
+    p->show(10);
 }
