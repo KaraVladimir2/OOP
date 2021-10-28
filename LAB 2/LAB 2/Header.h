@@ -31,5 +31,4 @@ public:
 	friend int comp(PEVM& ob1, PEVM& ob2);
 	friend ostream& operator << (ostream& out, const PEVM& ob);
 	friend istream& operator >> (istream& in, PEVM& ob);
-
 };

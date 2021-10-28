@@ -1,6 +1,5 @@
 ﻿#include "Header.h"
 
-
 void PEVM::set_proc(string p) { proc = p; }
 void PEVM::set_mgz(int m) { mgz = m; }
 void PEVM::set_ram(int r) { ram = r; }
@@ -114,7 +113,7 @@ int main()
 		else if (k == 5) {
 			cout << "Введите номер рядка массива: ";
 			cin >> k;
-				ob[k][k];
+				ob[k][0];
 		}
 		else if (k == 6) {
 			int m, r;
