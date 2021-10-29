@@ -93,7 +93,6 @@ ostream& operator<<(ostream& stream, PEVM& o1)
     return stream;
 }
 
-
 PEVM::PEVM(string a, int b, int c, string d)
     : proc(a),mgz(b), ram(c), type(d) {}
 
