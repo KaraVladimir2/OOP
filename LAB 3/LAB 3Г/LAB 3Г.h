@@ -4,7 +4,7 @@ using namespace std;
 
 class Figure {
 public:
-    virtual void show(int a =NULL, int b = NULL, int c = NULL) = 0;
+    virtual void show(int a =10, int b = 10, int c = 10) = 0;
 };
 
 class Triangle : public Figure {
@@ -13,7 +13,7 @@ class Triangle : public Figure {
     int c1 = 0;
 public:
     Triangle(){}
-    virtual void show(int a = NULL, int b = NULL, int c = NULL) override {
+    virtual void show(int a, int b, int c) override {
         a1 = a; b1 = b; c1 = c;
         cout << "Triangle = " << 
             sqrt(((a + b + c) / 2) * (((a + b + c) / 2) - a) * (((a + b + c) / 2) - b) * (((a + b + c) / 2) - c)) 
@@ -25,7 +25,7 @@ class Rectangle : public Figure {
     int b1;
 public:
     Rectangle(){}
-    virtual void show(int a = NULL, int b = NULL, int c = NULL) override {
+    virtual void show(int a, int b, int c) override {
         a1 = a; b1 = b;
         cout << "Rectangle = " << a * b << endl;}
 };
@@ -34,7 +34,7 @@ class Circle : public Figure {
     int radius;
 public:
     Circle(){}
-    virtual void show(int a = NULL, int b = NULL, int c = NULL) override {
+    virtual void show(int a, int b, int c) override {
         radius = a;
         cout << "Circle = " << radius * radius * 3.14 << endl; }
 };

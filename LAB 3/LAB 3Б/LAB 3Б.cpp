@@ -6,7 +6,7 @@ int main()
 	SetConsoleOutputCP(1251);
 	int k;
 	string s;
-	bool b;
+	bool b = false;
 	Library ob[3] = {
 		{"Книга1", "Автор1", 300, 1, true},
 		{"Книга2", "Автор2", 250, 2, false},
@@ -20,9 +20,9 @@ int main()
 		if (k == 1) {
 			cout << "Введите название книги: ";
 			cin >> s;
+			b = false;
 			for (int i = 0; i < 3; i++) {
 				if (ob[i].Existence(s)) b = true;
-				else b = false;
 			}
 			if (b) cout << "Такая книга есть!" << endl << endl;
 			else cout << "Такой книги нет!" << endl << endl;
@@ -30,9 +30,9 @@ int main()
 		if (k == 2) {
 			cout << "Введите название книги: ";
 			cin >> s;
+			b = false;
 			for (int i = 0; i < 3; i++) {
 				if (ob[i].Existence(s)) { b = true; k = i; }
-				else b = false;
 			}
 			if (ob[k].get_mark()) cout << "Такая книга есть в библиотеке!" << endl << endl;
 			else cout << "Такой книги нет в библиотеке нет!" << endl << endl;

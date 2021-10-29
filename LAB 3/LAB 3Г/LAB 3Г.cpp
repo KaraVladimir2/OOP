@@ -9,7 +9,7 @@ int main()
     Rectangle rect;
     Circle circle;
     p = &triang;
-    p->show(10,10,10);
+    p->show();
     p = &rect;
     p->show(10,10);
     p = &circle;
