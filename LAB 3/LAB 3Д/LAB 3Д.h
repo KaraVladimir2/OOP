@@ -22,6 +22,7 @@ public:
 	Prepod(string f, int a, string d, int deg) : Persona(f,a), discipline(d), degree(deg) {}
 	virtual int who() override { return 1; }
 	virtual int ask() override { return degree; }
+	int get_age() { return age; }
 	virtual void print() override { cout << fio << "|" << age << "|" << discipline << "|" << degree << endl; }
 };
 
@@ -33,7 +34,7 @@ public:
 	virtual int who() override { return 3; }
 	virtual int ask() override {
 		int k(0);
-		for (int i = 0; i < 5; i++) if (marks[i] == 2) k++;
+		for (int i = 0; i < 5; i++) if (marks[i] <3 ) k++;
 		return  k;
 	}
 	virtual void print() override { cout << fio << "|" << age << "|" << ask() << endl; }
@@ -49,8 +50,10 @@ public:
 	virtual void print() override { cout << fio << "|" << age << "|" << post << endl; }
 };
 
-class VUZ: public Prepod, public Student, public Zav_kaf {
-
+class VUZ {
 public:
-	VUZ(){}
+	Prepod p[2];
+	Student s[3];
+	Zav_kaf z;
+	VUZ() {}
 };
