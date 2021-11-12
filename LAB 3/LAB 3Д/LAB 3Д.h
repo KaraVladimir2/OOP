@@ -52,8 +52,8 @@ public:
 
 class VUZ {
 public:
-	Prepod p[2];
-	Student s[3];
+	Prepod* p = new Prepod[2];
+	Student* s = new Student[3];
 	Zav_kaf z;
 	VUZ() {}
 };
