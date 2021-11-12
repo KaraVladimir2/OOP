@@ -22,15 +22,23 @@ int main()
 	setlocale(LC_ALL, "ru");
     Print p("dkgKMAMRkwek234pwerWAKM1255");
     int size = p.s.length();
-    ofstream outfile("out.txt");
-    if (outfile.is_open()) {
-        for (int i = 0; i < size; i++)
-        {
-            if (p.s[i] != toupper(p.s[i]) && p.isParam(&p.s[i])) {
-                outfile << p.s[i];
+    fstream outfile;
+    outfile.open("out.txt");
+    try
+    {
+        if (outfile.is_open()) {
+            for (int i = 0; i < size; i++)
+            {
+                if (p.s[i] != toupper(p.s[i]) && p.isParam(&p.s[i])) {
+                    outfile << p.s[i];
+                }
             }
         }
+        else throw "Ошибка открытия файла!\n";
     }
-    
+    catch (const char* s)
+    {
+        cout << endl << s << endl << endl;
+    }
     outfile.close();
 }

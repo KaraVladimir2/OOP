@@ -1,1 +1,1 @@
-PowerPC-620 2000 32 R
+Pentium-III 233 8 C

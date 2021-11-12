@@ -15,15 +15,21 @@ int main()
     double f[10];
     ifstream infile("in.txt");
     ofstream outfile("out.txt");
-    if (infile.is_open()) {
-        int j(0);
-        while (!infile.eof()) {
-            infile >> f[j];
-            j++;
+    try
+    {
+        if (infile.is_open()) {
+            int j(0);
+            while (!infile.eof()) {
+                infile >> f[j];
+                j++;
+            }
         }
-
+        else throw "Ошибка открытия файла!\n";
     }
-    else cout << "Ошибка!\n";
+    catch (const char* s)
+    {
+        cout << endl << s << endl << endl;
+    }
     arr[0].set(f[0], f[1]);
     arr[1].set(f[2], f[3]);
     arr[2].set(f[4], f[5]);
