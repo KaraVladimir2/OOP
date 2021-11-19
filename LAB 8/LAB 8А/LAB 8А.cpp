@@ -14,8 +14,8 @@ ostream& operator << (ostream& out, const A<T>& a) {
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	A<double> x1(5.2);
-	A<double> x2(1.5);
+	A<int> x1(5);
+	A<int> x2(1);
 	try
 	{
 		if (x2.get() == 0) throw "ERROR: Деление на ноль";
