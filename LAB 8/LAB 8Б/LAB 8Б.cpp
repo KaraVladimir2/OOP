@@ -15,7 +15,16 @@ template <typename T> T Mas<T>::sum() {
 }
 
 template <typename T> double Mas<T>::ari() {
-	return double(sum()) / double(ind);
+	try
+	{
+		if (ind == 0) throw "ERROR: Деление на ноль";
+		else return double(sum()) / double(ind);
+	}
+	catch (const char*s)
+	{
+		cout << s << endl;
+		exit(0);
+	}
 }
 
 template <typename T> T& Mas<T>::operator[] (const int ind) {
