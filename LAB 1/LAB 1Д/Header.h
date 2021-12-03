@@ -17,11 +17,11 @@ public:
 	}
 	Num(int size, int min, int max) {
 		arr = new int[size];
-		arr[0] = rand() % (20 - (-20) + 1) + (-20);
+		arr[0] = rand() % (max - min + 1) + min;
 		int k;
 		for (int i = 1; i < size;)
 		{
-			k = rand() % (20 - (-20) + 1) + (-20);
+			k = rand() % (max - min + 1) + min;
 			if (k != arr[i - 1]) { arr[i] = k; i++; };
 		}
 	}
