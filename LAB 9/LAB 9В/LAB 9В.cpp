@@ -2,7 +2,7 @@
 
 void STAFF::insert() {
     string names[5] = { "Vasya", "Kolya", "Anton", "Sasha", "Anton" };
-    int voz[5] = { 22, 22, 24, 25, 22 };
+    int voz[5] = { 21, 20, 24, 25, 22 };
     for (int i = 0; i < 5; i++) {
         m1.insert({ Person(names[i],voz[i]),  ++count });
 
